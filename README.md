@@ -5,18 +5,19 @@ This project was created to generate and solve of sudoku puzzles.
 ## How to create a sudoku puzzle
 
 For generation of a new puzzle you need to use the method `create` from the static class `Puzzle`.
-####Parameters of `Puzzle.create`:
+
+#### Parameters of `Puzzle.create`:
 - `size` is side size, it should be equal 4, 9 or 16 (9 by default)
 - `difficulty` is initial percentage of completion, to set standard level use `Difficulty` enum with values easiest, easy, middle, hard or hardest (middle by default)
 
-####Example:
+#### Example:
 ```python
 from puzzle import Difficulty, Puzzle
 
 table = Puzzle.create(size=9, difficulty=Difficulty.hard)
 table.show()
 ```    
-####Example of output:       
+#### Example of output:       
 ``` 
 -------------------------
 |       | 9 2 1 |     5 | 
@@ -35,12 +36,12 @@ table.show()
 
 ## How to solve a sudoku puzzle:
 To solve a puzzle You need to create object `Table` and use it in the method `solve` from the static class `Puzzle`. 
-####Parameters of `Table`:
+#### Parameters of `Table`:
 - `size` is side size, it should be equal the matrix side (required)
 - `matrix` is 2d list filled by `str` or `None`, matrix sides should be equal 4, 9 or 16
 - `values` need to use if the matrix has non-standard value (by default 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, A, B, C, D, E, F)
-####Parameters of `Puzzle.solve`:
-- `table` is object `Table`
+#### Parameters of `Puzzle.solve`:
+- `table` is `Table` object
 ```python
 from helpers.table import Table
 from puzzle import Puzzle
@@ -62,7 +63,7 @@ table = Table(size=9, matrix=matrix)
 solution: Table = Puzzle.solve(table)
 solution.show()
 ```
-Example of output:
+#### Example of output:
 ```
 -------------------------
 | 3 1 4 | 5 2 9 | 8 7 6 | 
